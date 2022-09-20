@@ -20,8 +20,8 @@
 #pragma once
 
 #include <array>
-#include <Eigen/Eigen>
-#include <Eigen/Geometry>
+#include <eigen3/Eigen/Eigen>
+#include <eigen3/Eigen/Geometry>
 #include <ros/assert.h>
 
 // for Covariance types

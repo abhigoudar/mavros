@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include <Eigen/Geometry>
+#include <eigen3/Eigen/Geometry>
 #include <mavconn/thread_utils.h>
 #include <mavros_msgs/mavlink_convert.h>
 #include <mavconn/mavlink_dialect.h>
