@@ -38,7 +38,11 @@ endif()
 
 
 include(EnableCXX11)
-include(MavrosMavlink)
+# include(MavrosMavlink)
+
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};/usr/share/cmake/geographiclib")
+find_package(GeographicLib REQUIRED)
+
 
 # detect if sensor_msgs has BatteryState.msg
 # http://answers.ros.org/question/223769/how-to-check-that-message-exists-with-catkin-for-conditional-compilation-sensor_msgsbatterystate/
@@ -79,7 +83,7 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
-  ${mavlink_INCLUDE_DIRS}
+  # ${mavlink_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIRS}
   ${GeographicLib_INCLUDE_DIRS}
 )
@@ -118,9 +122,9 @@ add_library(mavros_plugins
   src/plugins/dummy.cpp
   src/plugins/ftp.cpp
   src/plugins/geofence.cpp
-  src/plugins/global_position.cpp
-  src/plugins/hil.cpp
-  src/plugins/home_position.cpp
+  # src/plugins/global_position.cpp
+  # src/plugins/hil.cpp
+  # src/plugins/home_position.cpp
   src/plugins/imu.cpp
   src/plugins/local_position.cpp
   src/plugins/manual_control.cpp
@@ -140,7 +144,7 @@ add_library(mavros_plugins
   src/plugins/sys_time.cpp
   src/plugins/vfr_hud.cpp
   src/plugins/waypoint.cpp
-  src/plugins/wind_estimation.cpp
+  # src/plugins/wind_estimation.cpp
 )
 add_dependencies(mavros_plugins
   mavros

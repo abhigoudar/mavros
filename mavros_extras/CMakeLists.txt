@@ -30,7 +30,7 @@ if(NOT EIGEN3_FOUND)
 endif()
 
 include(EnableCXX11)
-include(MavrosMavlink)
+# include(MavrosMavlink)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed

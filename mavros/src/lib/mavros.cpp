@@ -17,7 +17,7 @@
 #include <fnmatch.h>
 
 // MAVLINK_VERSION string
-#include <mavlink/config.h>
+#include <mavconn/mavlink_config.h>
 #include <mavconn/mavlink_dialect.h>
 
 #include <mavconn/udp.h>
