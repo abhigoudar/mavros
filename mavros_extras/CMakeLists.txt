@@ -13,7 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   tf
   tf2_eigen
-  urdf
+#  urdf
   visualization_msgs
 )
 
@@ -67,18 +67,18 @@ include_directories(
 add_library(mavros_extras
   src/plugins/adsb.cpp
   src/plugins/cam_imu_sync.cpp
-  src/plugins/camera.cpp
-  src/plugins/cellular_status.cpp
+  # src/plugins/camera.cpp
+  # src/plugins/cellular_status.cpp
   src/plugins/companion_process_status.cpp
   src/plugins/onboard_computer_status.cpp
   src/plugins/debug_value.cpp
   src/plugins/distance_sensor.cpp
-  src/plugins/esc_status.cpp
-  src/plugins/esc_telemetry.cpp
-  src/plugins/fake_gps.cpp
-  src/plugins/gps_input.cpp
-  src/plugins/gps_rtk.cpp
-  src/plugins/gps_status.cpp
+  # src/plugins/esc_status.cpp
+  # src/plugins/esc_telemetry.cpp
+  # src/plugins/fake_gps.cpp
+  # src/plugins/gps_input.cpp
+  # src/plugins/gps_rtk.cpp
+  # src/plugins/gps_status.cpp
   src/plugins/landing_target.cpp
   src/plugins/log_transfer.cpp
   src/plugins/mag_calibration_status.cpp
@@ -89,9 +89,9 @@ add_library(mavros_extras
   src/plugins/play_tune.cpp
   src/plugins/px4flow.cpp
   src/plugins/rangefinder.cpp
-  src/plugins/terrain.cpp
+  # src/plugins/terrain.cpp
   src/plugins/trajectory.cpp
-  src/plugins/tunnel.cpp
+  # src/plugins/tunnel.cpp
   src/plugins/vibration.cpp
   src/plugins/vision_pose_estimate.cpp
   src/plugins/vision_speed_estimate.cpp
@@ -113,12 +113,12 @@ target_link_libraries(visualization
   ${catkin_LIBRARIES}
 )
 
-add_executable(servo_state_publisher
-  src/servo_state_publisher.cpp
-)
-target_link_libraries(servo_state_publisher
-  ${catkin_LIBRARIES}
-)
+#add_executable(servo_state_publisher
+#  src/servo_state_publisher.cpp
+#)
+#target_link_libraries(servo_state_publisher
+#  ${catkin_LIBRARIES}
+#)
 
 #############
 ## Install ##
@@ -136,7 +136,7 @@ install(PROGRAMS
 )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS mavros_extras visualization servo_state_publisher
+install(TARGETS mavros_extras visualization
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

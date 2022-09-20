@@ -15,7 +15,7 @@ add_message_files(
   BatteryStatus.msg
   CamIMUStamp.msg
   CellularStatus.msg
-  # CameraImageCaptured.msg
+#  CameraImageCaptured.msg
   CommandCode.msg
   CompanionProcessStatus.msg
   OnboardComputerStatus.msg
@@ -35,10 +35,10 @@ add_message_files(
   GPSRTK.msg
   HilActuatorControls.msg
   HilControls.msg
-  # HilGPS.msg
+#  HilGPS.msg
   HilSensor.msg
-  # HilStateQuaternion.msg
-  # HomePosition.msg
+#  HilStateQuaternion.msg
+#  HomePosition.msg
   LandingTarget.msg
   LogData.msg
   LogEntry.msg
