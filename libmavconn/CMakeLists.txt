@@ -10,10 +10,12 @@ find_package(catkin REQUIRED)
 find_package(console_bridge REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system)
 
+set(mavlink_DIALECTS ASLUAV;AVSSUAS;all;ardupilotmega;common;development;icarous;matrixpilot;paparazzi;standard;storm32;uAvionix;ualberta)
+set(mavlink2_DIALECTS ASLUAV;AVSSUAS;all;ardupilotmega;common;development;icarous;matrixpilot;paparazzi;standard;storm32;uAvionix;ualberta)
+
 # add package modules path, not needed in dependend packages
 list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules")
 include(EnableCXX11)
-include(MavrosMavlink)
 
 # Fixed in mavlink 2016.7.7
 #-> enum values out of int range
@@ -25,7 +27,7 @@ include(MavrosMavlink)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES mavconn
-  DEPENDS Boost console_bridge mavlink
+  DEPENDS Boost console_bridge
   CFG_EXTRAS libmavconn-extras.cmake
 )
 
@@ -37,7 +39,6 @@ include_directories(
   include
   ${CMAKE_CURRENT_BINARY_DIR}/catkin_generated/include
   ${Boost_INCLUDE_DIRS}
-  ${mavlink_INCLUDE_DIRS}
   ${console_bridge_INCLUDE_DIRS}
 )
 

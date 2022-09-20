@@ -5,11 +5,9 @@ project(mavros)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  angles
   diagnostic_msgs
   diagnostic_updater
   eigen_conversions
-  geographic_msgs
   geometry_msgs
   libmavconn
   mavros_msgs
@@ -38,11 +36,6 @@ if(NOT EIGEN3_FOUND)
   set(EIGEN3_LIBRARIES ${EIGEN_LIBRARIES})
 endif()
 
-## Find GeographicLib
-find_package(GeographicLib REQUIRED)
-
-## Check if the datasets are installed
-include(CheckGeographicLibDatasets)
 
 include(EnableCXX11)
 include(MavrosMavlink)

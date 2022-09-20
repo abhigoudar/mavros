@@ -26,5 +26,5 @@
 #define MAVLINK_START_SIGN_STREAM(link_id)
 #define MAVLINK_END_SIGN_STREAM(link_id)
 
-@[for dialect in MAVLINK_V20_DIALECTS]#include <mavlink/v2.0/@(dialect)/@(dialect).hpp>
+@[for dialect in MAVLINK_V20_DIALECTS]#include <mavconn/v2.0/@(dialect)/@(dialect).hpp>
 @[end for]
