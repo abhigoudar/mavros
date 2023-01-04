@@ -20,7 +20,7 @@
 #include <list>
 #include <memory>
 
-#include "rcpputils/asserts.hpp"
+#include "mavros/asserts.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "mavros/plugin.hpp"
 #include "mavros/plugin_filter.hpp"
@@ -83,7 +83,7 @@ public:
         use_comp_id_system_control = p.as_bool();
       });
 
-    srv_cg = node->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
+    srv_cg = node->create_callback_group(rclcpp::callback_group::CallbackGroupType::MutuallyExclusive);
 
     command_long_srv =
       node->create_service<mavros_msgs::srv::CommandLong>(
@@ -146,7 +146,7 @@ private:
 
   std::mutex mutex;
 
-  rclcpp::CallbackGroup::SharedPtr srv_cg;
+  rclcpp::callback_group::CallbackGroup::SharedPtr srv_cg;
   rclcpp::Service<mavros_msgs::srv::CommandLong>::SharedPtr command_long_srv;
   rclcpp::Service<mavros_msgs::srv::CommandInt>::SharedPtr command_int_srv;
   rclcpp::Service<mavros_msgs::srv::CommandBool>::SharedPtr arming_srv;

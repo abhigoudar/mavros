@@ -19,7 +19,7 @@ using namespace mavros;                 // NOLINT
 using namespace mavros::uas;            // NOLINT
 using namespace std::chrono_literals;   // NOLINT
 
-UASExecutor::UASExecutor(const rclcpp::ExecutorOptions & options)
+UASExecutor::UASExecutor(const rclcpp::executor::ExecutorArgs & options)
 : MultiThreadedExecutor(options, select_number_of_threads(), true, 1000ms),
   source_system(0),
   source_component(0)

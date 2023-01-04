@@ -32,7 +32,7 @@ find_package(libmavconn REQUIRED)
 
 find_package(eigen3_cmake_module REQUIRED)
 find_package(Eigen3 REQUIRED)
-# find_package(yaml_cpp REQUIRED)
+#find_package(yaml_cpp REQUIRED)
 find_package(yaml_cpp_vendor REQUIRED)
 
 ## Find GeographicLib
@@ -87,7 +87,7 @@ add_library(mavros_extras_plugins SHARED
   # [[[cog:
   # mavros_cog.outl_glob_files('src/plugins')
   # ]]]
-  src/plugins/3dr_radio.cpp
+  #src/plugins/3dr_radio.cpp
   src/plugins/adsb.cpp
   src/plugins/cam_imu_sync.cpp
   src/plugins/camera.cpp
@@ -100,7 +100,7 @@ add_library(mavros_extras_plugins SHARED
   src/plugins/fake_gps.cpp
   src/plugins/gps_input.cpp
   src/plugins/gps_rtk.cpp
-  src/plugins/gps_status.cpp
+  # src/plugins/gps_status.cpp
   src/plugins/guided_target.cpp
   src/plugins/hil.cpp
   src/plugins/landing_target.cpp

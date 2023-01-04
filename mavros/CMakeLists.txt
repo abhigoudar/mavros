@@ -100,6 +100,7 @@ add_library(mavros SHARED
   src/lib/uas_stringify.cpp
   src/lib/uas_tf.cpp
   src/lib/uas_timesync.cpp
+  src/lib/asserts.cpp
   # [[[end]]] (checksum: 3239d16fc87982964694f18425f297b1)
 )
 ament_target_dependencies(mavros

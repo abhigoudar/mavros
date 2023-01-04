@@ -26,7 +26,7 @@
 #include <algorithm>
 #include <Eigen/Eigen>              // NOLINT
 #include <Eigen/Geometry>           // NOLINT
-#include <rcpputils/asserts.hpp>    // NOLINT
+#include <mavros/asserts.hpp>    // NOLINT
 
 // for Covariance types
 #include "sensor_msgs/msg/imu.hpp"

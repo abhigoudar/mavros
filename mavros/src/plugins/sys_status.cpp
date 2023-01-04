@@ -22,7 +22,7 @@
 #include <memory>
 #include <utility>
 
-#include "rcpputils/asserts.hpp"
+#include "mavros/asserts.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "mavros/plugin.hpp"
 #include "mavros/plugin_filter.hpp"
@@ -250,7 +250,7 @@ public:
     check_flag("Satellite Communication", STS::SATCOM);
     check_flag("pre-arm check status. Always healthy when armed", STS::PREARM_CHECK);
     check_flag("Avoidance/collision prevention", STS::OBSTACLE_AVOIDANCE);
-    check_flag("propulsion (actuator, esc, motor or propellor)", STS::PROPULSION);
+    // check_flag("propulsion (actuator, esc, motor or propellor)", STS::PROPULSION);
     // [[[end]]] (checksum: 435a149e38737aac78b4be94b670a6dd)
 
     stat.addf("CPU Load (%)", "%.1f", last_st.load / 10.0);
@@ -580,7 +580,7 @@ public:
       "statustext/send", sensor_qos,
       std::bind(&SystemStatusPlugin::statustext_cb, this, _1));
 
-    srv_cg = node->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
+    srv_cg = node->create_callback_group(rclcpp::callback_group::CallbackGroupType::MutuallyExclusive);
 
     mode_srv = node->create_service<mavros_msgs::srv::SetMode>(
       "set_mode",
@@ -647,7 +647,7 @@ private:
   rclcpp::Publisher<mavros_msgs::msg::StatusText>::SharedPtr statustext_pub;
   rclcpp::Subscription<mavros_msgs::msg::StatusText>::SharedPtr statustext_sub;
 
-  rclcpp::CallbackGroup::SharedPtr srv_cg;
+  rclcpp::callback_group::CallbackGroup::SharedPtr srv_cg;
   rclcpp::Service<mavros_msgs::srv::StreamRate>::SharedPtr stream_rate_srv;
   rclcpp::Service<mavros_msgs::srv::MessageInterval>::SharedPtr message_interval_srv;
   rclcpp::Service<mavros_msgs::srv::SetMode>::SharedPtr mode_srv;

@@ -38,7 +38,7 @@ namespace uas
 class UASExecutor : public rclcpp::executors::MultiThreadedExecutor
 {
 public:
-  explicit UASExecutor(const rclcpp::ExecutorOptions & options = rclcpp::ExecutorOptions());
+  explicit UASExecutor(const rclcpp::executor::ExecutorArgs & options = rclcpp::executor::ExecutorArgs());
   ~UASExecutor() = default;
 
   void set_ids(uint8_t sysid, uint8_t compid);

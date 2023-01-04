@@ -23,7 +23,7 @@
 
 #include <memory>
 
-#include "rcpputils/asserts.hpp"
+#include "mavros/asserts.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "mavros/plugin.hpp"
 #include "mavros/plugin_filter.hpp"
