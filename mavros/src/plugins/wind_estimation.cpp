@@ -18,7 +18,7 @@
 #include <angles/angles.h>
 #include <tf2_eigen/tf2_eigen.h>
 
-#include "rcpputils/asserts.hpp"
+#include "rclcpp_extensions/asserts.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "mavros/plugin.hpp"
 #include "mavros/plugin_filter.hpp"

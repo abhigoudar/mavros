@@ -18,6 +18,7 @@
 #include "mavros/mavros_router.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "rclcpp_extensions/multi_threaded_executor_ext.hpp"
 
 /**
  * MAVROS Node is a transition helper, a component loader preconfigured
@@ -26,7 +27,7 @@
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::executors::MultiThreadedExecutor exec(rclcpp::ExecutorOptions(), 2);
+  rclcpp::executors::MultiThreadedExecutorExt exec(rclcpp::executor::ExecutorArgs(), 2);
 
   rclcpp::NodeOptions options;
   // options.use_intra_process_comms(true);

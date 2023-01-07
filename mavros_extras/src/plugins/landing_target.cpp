@@ -19,7 +19,7 @@
 #include <algorithm>
 #include <string>
 
-#include "rcpputils/asserts.hpp"
+#include "rclcpp_extensions/asserts.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "mavros/utils.hpp"
 #include "mavros/plugin.hpp"

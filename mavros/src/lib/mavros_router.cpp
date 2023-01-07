@@ -18,7 +18,7 @@
 #include <utility>
 
 #include "mavros/mavros_router.hpp"
-#include "rcpputils/asserts.hpp"
+#include "rclcpp_extensions/asserts.hpp"
 
 using namespace mavros::router;  // NOLINT
 using rclcpp::QoS;

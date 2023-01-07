@@ -19,8 +19,8 @@ using namespace mavros;                 // NOLINT
 using namespace mavros::uas;            // NOLINT
 using namespace std::chrono_literals;   // NOLINT
 
-UASExecutor::UASExecutor(const rclcpp::ExecutorOptions & options)
-: MultiThreadedExecutor(options, select_number_of_threads(), true, 1000ms),
+UASExecutor::UASExecutor(const rclcpp::executor::ExecutorArgs & options)
+: MultiThreadedExecutorExt(options, select_number_of_threads(), true, 1000ms),
   source_system(0),
   source_component(0)
 {
@@ -41,5 +41,5 @@ void UASExecutor::set_ids(uint8_t sysid, uint8_t compid)
 void UASExecutor::run(size_t thread_id)
 {
   utils::set_this_thread_name("uas-exec/%d.%d/%zu", source_system, source_component, thread_id);
-  MultiThreadedExecutor::run(thread_id);
+  MultiThreadedExecutorExt::run(thread_id);
 }

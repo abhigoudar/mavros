@@ -17,7 +17,7 @@
 #include <vector>
 #include <Eigen/Eigen>  // NOLINT
 
-#include "rcpputils/asserts.hpp"
+#include "rclcpp_extensions/asserts.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "mavros/utils.hpp"
 

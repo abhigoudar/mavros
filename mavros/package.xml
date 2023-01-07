@@ -51,6 +51,7 @@
   <depend>rclcpp</depend>
   <depend>rclcpp_components</depend>
   <depend>rcpputils</depend>
+  <depend>rclcpp_extensions</depend>
 
   <!-- message packages -->
   <depend>diagnostic_msgs</depend>

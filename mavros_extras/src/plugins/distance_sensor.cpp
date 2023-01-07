@@ -24,7 +24,7 @@
 #include <vector>
 #include <shared_mutex>     // NOLINT cpplint, that is almost 4 years since standard release!
 
-#include "rcpputils/asserts.hpp"
+#include "rclcpp_extensions/asserts.hpp"
 #include "mavros/mavros_uas.hpp"
 #include "mavros/plugin.hpp"
 #include "mavros/plugin_filter.hpp"
